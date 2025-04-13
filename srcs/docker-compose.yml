@@ -9,7 +9,7 @@ services:
     env_file:
       - .env
     volumes:
-      - ./web:/var/www/html
+      - web:/var/www/html
     depends_on:
       - wordpress
     networks:
@@ -23,7 +23,7 @@ services:
     env_file:
       - .env
     volumes:
-      - ./web:/var/www/html
+      - web:/var/www/html
     depends_on:
       - mariadb
     networks:
@@ -39,7 +39,7 @@ services:
     env_file:
       - .env
     volumes:
-      - ./db:/var/lib/mysql
+      - db:/var/lib/mysql
     networks:
       - inception
     restart: always
@@ -49,3 +49,7 @@ services:
 networks:
   inception:
     driver: bridge
+
+volumes:
+  db:
+  web:

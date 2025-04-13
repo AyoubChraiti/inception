@@ -1,6 +1,4 @@
-NAME=inception
-
-all: up
+all: re
 
 up:
 	docker-compose -f srcs/docker-compose.yml up -d --build
@@ -8,9 +6,10 @@ up:
 down:
 	docker-compose -f srcs/docker-compose.yml down
 
-re: down up
-
 clean:
+	docker-compose -f srcs/docker-compose.yml down -v --remove-orphans
 	docker system prune -af --volumes
+
+re: clean up
 
 .PHONY: all up down re clean
