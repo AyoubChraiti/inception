@@ -1,6 +1,6 @@
 FROM debian:bookworm
 
-RUN apt update && apt upgrade && apt install -y \
+RUN apt update -y && apt upgrade -y && apt install -y \
     mariadb-server \
     php-mysqli \
     && rm -rf /var/lib/apt/lists/*
