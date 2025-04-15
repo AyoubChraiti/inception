@@ -11,7 +11,7 @@ curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.pha
 chmod +x wp-cli.phar
 mv wp-cli.phar /usr/local/bin/wp
 
-# Download WordPress
+# download wp
 cd /var/www/html
 wp core download --allow-root
 
@@ -22,7 +22,6 @@ sed -i "s#username_here#$DB_USER#g" /var/www/html/wp-config.php
 sed -i "s#password_here#$DB_PASSWORD#g" /var/www/html/wp-config.php
 sed -i "s#localhost#$DB_HOST#g" /var/www/html/wp-config.php
 
-# Install WordPress (only if not already installed)
 if ! wp core is-installed --allow-root --path=/var/www/html; then
     wp core install --url="$WP_URL" \
         --title="$WP_TITLE" \

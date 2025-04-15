@@ -7,8 +7,8 @@ down:
 	docker-compose -f srcs/docker-compose.yml down
 
 clean:
-	docker-compose -f srcs/docker-compose.yml down -v --remove-orphans
-	docker system prune -af --volumes
+	docker-compose -f srcs/docker-compose.yml down --remove-orphans
+# docker system prune -af --volumes
 
 re: clean up
 

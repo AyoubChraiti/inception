@@ -1,5 +1,4 @@
 version: '3.8'
-
 services:
   nginx:
     build: ./requirements/nginx
@@ -15,7 +14,6 @@ services:
     networks:
       - inception
     restart: always
-
   wordpress:
     build: ./requirements/wordpress
     container_name: wordpress
@@ -31,7 +29,6 @@ services:
     restart: always
     expose:
       - "9000"
-
   mariadb:
     build: ./requirements/mariadb
     container_name: mariadb
@@ -45,11 +42,10 @@ services:
     restart: always
     expose:
       - "3306"
-
+volumes:
+  db:
+  web:
 networks:
   inception:
     driver: bridge
 
-volumes:
-  db:
-  web:
