@@ -11,7 +11,6 @@ RUN apt-get update -y \
     php8.2-xml \
     php8.2-zip \
     curl -y \
-    # clean the apt cache
     && rm -rf /var/lib/apt/lists/*
 
 COPY tools/script.sh /root/script/ws.sh

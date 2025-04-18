@@ -1,3 +1,11 @@
+DB_DIR = /home/achraiti/data/db
+WEB_DIR = /home/achraiti/data/web
+
+# create_dirs:
+# 	mkdir -p $(DB_DIR)
+# 	mkdir -p $(WEB_DIR)
+
+#should add create_dirs to the up command after migration to linux
 all: re
 
 up:
@@ -7,8 +15,7 @@ down:
 	docker-compose -f srcs/docker-compose.yml down
 
 clean:
-	docker-compose -f srcs/docker-compose.yml down --remove-orphans
-# docker system prune -af --volumes
+	docker-compose -f srcs/docker-compose.yml down -v --remove-orphans && docker system prune -af --volumes
 
 re: clean up
 
