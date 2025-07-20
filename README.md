@@ -1,4 +1,4 @@
-### Inception Project
+# Inception Project
 The Inception project is a system administration exercise designed to deepen understanding of containerization and orchestration using Docker. The primary goal was to create a small, secure, and efficient infrastructure composed of multiple services running in Docker containers within a virtual machine. The project leverages Docker Compose to orchestrate a web stack consisting of NGINX, WordPress, and MariaDB, with additional bonus services to enhance functionality. The infrastructure was built from scratch, emphasizing custom Docker images, secure configurations, and best practices for container management.
 Work Accomplished
 The Inception project involved the following tasks and implementations, adhering to the mandatory and bonus requirements outlined in the project guidelines:
